@@ -2,7 +2,7 @@ sidebar <- dashboardSidebar(
   
   sidebarUserPanel(
     "Danny",
-    subtitle = a(href = "#", icon("circle", class = "text-success"), "Online"),
+    #subtitle = a(href = "#", icon("circle", class = "text-success"), "Online"),
     # Image file should be in www/ subdir
     image = "userimage.png"
   ),
@@ -26,7 +26,7 @@ sidebar <- dashboardSidebar(
    menuItem("Inputs", icon = icon("bar-chart-o"),
             # Input directly under menuItem
             selectInput("inputTest", "Input Test",
-                        choices = StartDateDay, multiple=TRUE, selectize=TRUE,
+                        choices = c("A","B"), multiple=TRUE, selectize=TRUE,
                         width = '98%')
             )
    )

@@ -32,7 +32,6 @@ ui <- dashboardPage(skin='blue',
       source("columns.R", local = T)$value  #add value other TRUE will be displayed
       ####################################
 
-
                 
 
 
@@ -40,6 +39,12 @@ ui <- dashboardPage(skin='blue',
       
       # First tab content
       tabItem(tabName = "dashboard"
+      ,
+        tabPanel(
+        # Title can include an icon
+        title = tagList(shiny::icon("gear"), "tabBox status"),
+            tabPanel("Europe", tableTestUI("test"))
+      )
 
     
       )   
@@ -88,7 +93,11 @@ server = function(input, output,session) {
   ######################################
 
 
+    ###### Include Modules ###############
 
+    callModule(tableTest, "test")
+
+    ####### tbl ###############    
   
 
 
