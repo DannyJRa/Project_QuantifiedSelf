@@ -8,7 +8,7 @@
 
 #########################
 
-filepath <- paste0("R:/5_IT/5_Secrets/TCX/")
+filepath <- paste0("~/02_CloudComputing/10_Secrets/TCX/")
 
 #TrainFile <- paste0(filepath,id,".tcx")
 

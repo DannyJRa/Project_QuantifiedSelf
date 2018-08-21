@@ -31,13 +31,13 @@ header <- dashboardHeader(
                  ),
                  notificationItem(
                    text = "12 items delivered",
-                   icon("truck"),
-                   status = "success"
+                   icon("truck")#,
+                   #status = "success"
                  ),
                  notificationItem(
                    text = "Server load at 86%",
-                   icon = icon("exclamation-triangle"),
-                   status = "warning"
+                   icon = icon("exclamation-triangle")#,
+                   #status = "warning"
                  )
     )
 

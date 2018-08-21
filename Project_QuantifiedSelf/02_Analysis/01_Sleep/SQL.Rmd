@@ -1,0 +1,64 @@
+---
+title: "SQL"
+output:
+  html_document:
+    code_folding: hide
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    number_sections: yes
+geometry: margin = 1.2in
+fontsize: 10pt
+always_allow_html: yes
+---
+
+
+```{r setup}
+## Loading required package: 
+library('RPostgreSQL')
+## Create db connection
+db = dbConnect(dbDriver("PostgreSQL"), user="postgres", password="datascience64",
+                host="localhost", port=5432, dbname="postgres")
+##Set as default for SQL chunks
+knitr::opts_chunk$set(connection = "db")
+```
+
+```{r}
+
+dbListTables(db)
+#dbListConnections(con)
+```
+
+```{sql}
+SELECT * FROM pg_catalog.pg_tables;
+```
+
+
+```{r}
+
+library(reticulate)
+#Define python environment
+use_python("C:/Users/danny.rasch/Anaconda/python.exe")
+
+
+#Test
+os <- import("os")
+default_path=os$getcwd()
+```
+
+Chapter 6: Storing Data
+```{python}
+import psycopg2
+conn = psycopg2.connect("host=localhost dbname=postgres user=postgres password=datascience64")
+```
+
+```{r}
+source("R:/5_IT/5_Secrets/PostgreSQL_docker_db_garmin.R")
+
+dbListFields(con, "sleep")
+dbListTables(con)
+
+sleep=dbGetQuery(con, 'SELECT * FROM sleep')
+
+```
+

@@ -5,7 +5,7 @@ library(tidyverse)
 library(trackeR)
 library(DT)
 
-path = "R:/5_IT/5_Secrets/"
+path = "~/02_CloudComputing/10_Secrets/"
 load(paste0(path, "Strava_stoken.Rdata"))
 
 # get activities, get activities by location, plot
@@ -50,6 +50,6 @@ source("server/trackeR.R", local = T)
 ########### READ SQL
 
 
-source("R:/5_IT/5_Secrets/SQL_docker_connection_home.R")
-Running<- dbReadTable(conn = con, name = 'Running')
-
+#source("R:/5_IT/5_Secrets/SQL_docker_connection_home.R")
+#Running<- dbReadTable(conn = con, name = 'Running')
+Running <- read.delim("~/01_Github/Project_QuantifiedSelf/Project_QuantifiedSelf/App/running.csv")
